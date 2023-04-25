@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
                     // Permission is granted, do something
                     myadapter.startDiscovery();
                 }
+                else 
+                {
+                    // Permission is not granted, request it
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{permission}, 1);
+                }
 
             }
         });
@@ -67,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
                     // Permission is granted, do something
                     stringArrayList.add(device.getName());
                     arrayAdapter.notifyDataSetChanged();
+                }
+                else 
+                {
+                    // Permission is not granted, request it
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{permission}, 1);
                 }
 
 
